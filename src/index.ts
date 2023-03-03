@@ -1,11 +1,22 @@
 import devServer from "./server/dev";
 import prodServer from "./server/prod";
 import express from "express";
+import {Server as socketServer} from "socket.io" /*1*/
+import http from 'http' /*2*/
 
 import { name } from "@/utils";
 
 const port = 3000;
 const app = express();
+
+const server = http.createServer(app)
+// 這裡使用 socket.io的Server 並且將http建立的server 給帶入完成註冊
+const io = new socketServer(server)
+
+// 當連線時會發送訊息
+io.on('join',(socket)=>{
+  socket.emit('當連線時會發出個訊息')
+})
 
 // 執行npm run dev本地開發 or 執行npm run start部署後啟動線上伺服器
 if (process.env.NODE_ENV === "development") {
@@ -16,6 +27,7 @@ if (process.env.NODE_ENV === "development") {
 
 console.log("server side", name);
 
-app.listen(port, () => {
+// 這裡使用 https
+server.listen(port, () => {
   console.log(`The application is running on port ${port}.`);
 });

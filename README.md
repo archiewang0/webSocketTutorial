@@ -56,3 +56,9 @@ dev.ts -> 重定向到main/main.html跟chatRoom/chatRoom.html
 prod.ts -> 直接返回main/main.html跟chatRoom/chatRoom.html
 
 ```
+
+note:
+* 需要先行 安裝 socket的套件 `npm i -D socket.io socket.io-client` 
+    (版本參考: "socket.io": "^4.6.1", "socket.io-client": "^4.6.1")
+* 確認 node 版本, 如果過低使用 nrm 來改本版
+* 確認 nrm 是否使用 npm 
