@@ -13,9 +13,10 @@ const server = http.createServer(app)
 // 這裡使用 socket.io的Server 並且將http建立的server 給帶入完成註冊
 const io = new socketServer(server)
 
-// 當連線時會發送訊息
-io.on('join',(socket)=>{
-  socket.emit('當連線時會發出個訊息')
+// 當連線時會發送訊息 
+io.on('connection',(socket)=>{
+  // 發出 join 的訊息 裡面也會有相關的內容
+  socket.emit('join','當連線時會發出個訊息')
 })
 
 // 執行npm run dev本地開發 or 執行npm run start部署後啟動線上伺服器
