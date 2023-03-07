@@ -62,3 +62,7 @@ note:
     (版本參考: "socket.io": "^4.6.1", "socket.io-client": "^4.6.1")
 * 確認 node 版本, 如果過低使用 nvm 來改本版
 * 確認 nrm 是否使用 npm 
+* 如果已經使用較低版本的node 來安裝node_module 的話, 
+需要將node_module 以及packge-lock.json刪除
+再次執行 `npm i` 
+* 刪除node_module command `npx rimraf node_modules`
