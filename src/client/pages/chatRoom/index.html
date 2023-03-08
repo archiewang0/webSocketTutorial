@@ -13,27 +13,30 @@
         class="w-full h-[56px] px-4 box-border flex justify-between items-center"
       >
         <button class="text-white">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-[40px] w-[40px]"
-            viewBox="0 0 20 20"
-            fill="#FFF"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-              clip-rule="evenodd"
-            />
-          </svg>
+          <a href="/main/main.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-[40px] w-[40px]"
+              viewBox="0 0 20 20"
+              fill="#FFF"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
         </button>
-        <p class="text-white font-extrabold">ROOM 1</p>
+        <p id="roomName" class="text-white font-extrabold">ROOM 1</p>
         <div class="h-[40px] w-[40px]"></div>
       </header>
 
       <div
         class="mt-[10px] box-border px-4 h-[calc(100vh-156px)] overflow-y-scroll"
+        id="chatBord"
       >
-        <div class="flex justify-start mb-4 items-end">
+        <!-- <div class="flex justify-start mb-4 items-end">
           <div>
             <p class="text-xs text-gray-700 mb-1">Bruce</p>
             <p
@@ -44,11 +47,11 @@
           </div>
 
           <p class="text-xs text-gray-700 ml-4">00:00</p>
-        </div>
+        </div> -->
 
         <!-- right side -->
 
-        <div class="flex justify-end mb-4 items-end">
+        <!-- <div class="flex justify-end mb-4 items-end">
           <p class="text-xs text-gray-700 mr-4">00:00</p>
 
           <div>
@@ -59,11 +62,11 @@
               嗨嗨嗨！
             </p>
           </div>
-        </div>
+        </div> -->
 
-        <div class="flex justify-center mb-4 items-center">
+        <!-- <div class="flex justify-center mb-4 items-center">
           <p class="text-gray-700 text-sm">bruce joined the room</p>
-        </div>
+        </div> -->
       </div>
 
       <div class="flex px-[20px] py-[20px]">
