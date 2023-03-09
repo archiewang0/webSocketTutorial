@@ -10,7 +10,22 @@ if( !userName || !roomId){
 }
 
 // 將io 的聆聽事件給取出來
+// 這裡也是跟backend 做連線
 const clientIo = io()
+
+
+clientIo.emit('join',`${userName} 加入聊天室`)
+
+// 給予發生的"事件",以及處裡的function
+// ex: 發生join事件(由後段emit 了join的訊息, 也可能是別的事件)
+clientIo.on('join',(msg)=>{
+    console.log('msg: ',msg)
+    joinMsgHandler(msg)
+    // <div class="flex justify-center mb-4 items-center">
+    //     <p class="text-gray-700 text-sm">bruce joined the room</p>
+    // </div>
+})
+
 
 
 const textInput = document.getElementById('textInput') as HTMLInputElement
@@ -33,9 +48,7 @@ submitBtn.addEventListener('click',()=>{
 // ts-node 可以讓 ts直接執行出來
 console.log("client side chatroom page", name);
 
-// 給予發生的"事件",以及處裡的function
-// ex: 發生join事件(由後段emit 了join的訊息, 也可能是別的事件)
-clientIo.on('join',(msg)=>{console.log('msg: ',msg)})
+
 
 // 這裡是接收後端發送的內容
 clientIo.on('chatSendFront',(msg)=>{
@@ -61,5 +74,15 @@ function msgHandler(msg:string){
     `
     chatBord.appendChild(divBox)
     textInput.value = ""
+    chatBord.scrollTop = chatBord.scrollHeight
+}
+
+function joinMsgHandler(msg:string){
+    const divBox = document.createElement('div')
+    divBox.classList.add('flex','justify-center','mb-4','items-center')
+    divBox.innerHTML = `
+        <p class="text-gray-700 text-sm">${msg}</p>
+    `
+    chatBord.appendChild(divBox)
     chatBord.scrollTop = chatBord.scrollHeight
 }

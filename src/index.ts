@@ -16,14 +16,18 @@ const io = new socketServer(server)
 
 // 當連線時會發送訊息 
 io.on('connection',(socket)=>{
-  // 發出 join 的訊息 裡面也會有相關的內容
-  socket.emit('join','當連線時會發出個訊息')
+
 
   // 這裡是接收“前端”發送的內容
   // 看到on 就是接收的意思
   socket.on('chatSendBack',(msg)=>{ 
     // 這裡是發送給"後端“的內容
     socket.emit('chatSendFront',msg)
+  })
+
+  // 發出 join 的訊息 裡面也會有相關的內容
+  socket.on('join',(msg)=>{
+    socket.emit('join',msg)
   })
 })
 
@@ -34,7 +38,7 @@ if (process.env.NODE_ENV === "development") {
   prodServer(app);
 }
 
-console.log("server side", name);
+// console.log("server side", name);
 
 // 這裡使用 https
 server.listen(port, () => {
