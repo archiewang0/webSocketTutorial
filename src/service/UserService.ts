@@ -1,4 +1,4 @@
-type I_UserData = {
+export type I_UserData = {
     id: string
     userName: string
     roomName: string
