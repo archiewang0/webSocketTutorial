@@ -79,7 +79,7 @@ module.exports = {
     new CompressionPlugin(),
     new HotModuleReplacementPlugin(),
   ],
-  devtool: "inline-source-map",
+  // devtool: "inline-source-map",
   devServer: {
     static: "./dist",
   },

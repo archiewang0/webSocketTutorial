@@ -8,11 +8,13 @@ export default function (app: Express) {
   app.use(compression());
   app.use(express.static(path.resolve(__dirname, "../../dist")));
 
-  app.get("/main", function (req, res, next) {
-    res.sendFile("/main/index.html");
+  app.get("/", function (req, res, next) {
+    // res.sendFile("/main/index.html");
+    res.sendFile(path.resolve(__dirname, "../../dist/main/index.html"));
   });
 
   app.get("/chatroom", function (req, res, next) {
-    res.sendFile("/chatroom/index.html");
+    // res.sendFile("/chatroom/index.html");
+    res.sendFile(path.resolve(__dirname, "../../dist/chatroom/index.html"));
   });
 }
