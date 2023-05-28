@@ -9,6 +9,5 @@ const startBtn = document.getElementById('startBtn') as HTMLButtonElement
 startBtn.addEventListener('click',()=>{
     const nameValue = nameInputEl.value
     const roomId = roomSelect.value
-    console.log({nameValue , roomId})
-    location.href = `/chatRoom/chatRoom.html?user_name=${nameValue}&room_id=${roomId}`
+    location.href = `/chatRoom/index.html?user_name=${nameValue}&room_id=${roomId}`
 })
