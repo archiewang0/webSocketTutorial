@@ -7,7 +7,7 @@ export default function (app: Express) {
   
   // const compiler = webpack(config);
 
-  console.log('跑 dev server')
+  // console.log('跑 dev server') 
 
   app.get("/", function (req, res, next) {
     res.redirect("/main/index.html");
