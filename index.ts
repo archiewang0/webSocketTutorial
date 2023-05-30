@@ -1,5 +1,5 @@
-import devServer from "./server/dev";
-import prodServer from "./server/prod";
+import devServer from "./dev";
+import prodServer from "./prod";
 import express from "express";
 import {Server as socketServer} from "socket.io"
 import http from 'http' 
