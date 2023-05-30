@@ -10,7 +10,8 @@ export default function (app: Express) {
 
   app.get("/", function (req, res, next) {
     // res.sendFile("/main/index.html");
-    res.sendFile(path.resolve(__dirname, "./dist/main/index.html"));
+    // res.sendFile(path.resolve(__dirname, "./dist/main/index.html"));
+    res.send('妳好!!!!')
   });
 
   app.get("/chatroom", function (req, res, next) {
