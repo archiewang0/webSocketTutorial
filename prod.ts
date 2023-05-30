@@ -3,10 +3,10 @@ import compression from "compression";
 import path from "path";
 
 export default function (app: Express) {
-  console.log('跑 prod server')
+  console.log('跑 prod server!!!!!!!')
 
-  app.use(compression());
-  app.use(express.static(path.resolve(__dirname, "./dist")));
+  // app.use(compression());
+  // app.use(express.static(path.resolve(__dirname, "./dist")));
 
   app.get("/", function (req, res, next) {
     // res.sendFile("/main/index.html");
